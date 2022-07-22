@@ -43,5 +43,14 @@ class StackTest extends TestCase
 
         return $stack;
     }
+
+        /**
+     * @depends testPush
+    */
+
+    public function testPop(array $stack){
+        $this->assertEquals('foo', array_pop($stack));
+        $this->assertEquals(0, count($stack));
+    }
 }
 
